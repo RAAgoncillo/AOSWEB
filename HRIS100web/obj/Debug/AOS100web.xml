@@ -134,9 +134,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._dpTransDate">
+<member name="F:AOS100web.DailySalesReport._dpTransDateDSR">
 <summary>
-dpTransDate control.
+dpTransDateDSR control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -197,9 +197,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._cboDONo">
+<member name="F:AOS100web.DailySalesReport._txtDONo">
 <summary>
-cboDONo control.
+txtDONo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._lbOpenDO">
+<summary>
+lbOpenDO control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -224,9 +233,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._Panel1">
+<member name="F:AOS100web.DailySalesReport._PandgvDOlist">
 <summary>
-Panel1 control.
+PandgvDOlist control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._dgvDOlist">
+<summary>
+dgvDOlist control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._PanDgvDOdet">
+<summary>
+PanDgvDOdet control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -530,45 +557,45 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtItm">
+<member name="F:AOS100web.DailySalesReport._txtItmSI">
 <summary>
-txtItm control.
+txtItmSI control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtCodeNo">
+<member name="F:AOS100web.DailySalesReport._txtCodeNoSI">
 <summary>
-txtCodeNo control.
+txtCodeNoSI control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._cboMMdesc">
+<member name="F:AOS100web.DailySalesReport._cboMMdescSI">
 <summary>
-cboMMdesc control.
+cboMMdescSI control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtQty">
+<member name="F:AOS100web.DailySalesReport._txtQtySI">
 <summary>
-txtQty control.
+txtQtySI control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtWt">
+<member name="F:AOS100web.DailySalesReport._txtWtSI">
 <summary>
-txtWt control.
+txtWtSI control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -944,9 +971,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._cboWRRNo">
+<member name="F:AOS100web.DailySalesReport._txtWRRNo">
 <summary>
-cboWRRNo control.
+txtWRRNo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._lbWRRlist">
+<summary>
+lbWRRlist control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -971,9 +1007,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._Panel3">
+<member name="F:AOS100web.DailySalesReport._PandgvWRRlist">
 <summary>
-Panel3 control.
+PandgvWRRlist control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._dgvWRRlist">
+<summary>
+dgvWRRlist control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:AOS100web.DailySalesReport._PandgvWRR">
+<summary>
+PandgvWRR control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1052,45 +1106,45 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtItmPS">
+<member name="F:AOS100web.DailySalesReport._txtItm">
 <summary>
-txtItmPS control.
+txtItm control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtCodeNoPS">
+<member name="F:AOS100web.DailySalesReport._txtCodeNo">
 <summary>
-txtCodeNoPS control.
+txtCodeNo control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._cboMMdescPS">
+<member name="F:AOS100web.DailySalesReport._cboMMdesc">
 <summary>
-cboMMdescPS control.
+cboMMdesc control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtQtyPS">
+<member name="F:AOS100web.DailySalesReport._txtQty">
 <summary>
-txtQtyPS control.
+txtQty control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._txtWtPS">
+<member name="F:AOS100web.DailySalesReport._txtWt">
 <summary>
-txtWtPS control.
+txtWt control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1214,18 +1268,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._Label9">
+<member name="F:AOS100web.DailySalesReport._lblVarQty2">
 <summary>
-Label9 control.
+lblVarQty2 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DailySalesReport._Label10">
+<member name="F:AOS100web.DailySalesReport._lblTotVar">
 <summary>
-Label10 control.
+lblTotVar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -4301,24 +4355,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:AOS100web.DeliveryOrder._CheckBox4">
-<summary>
-CheckBox4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:AOS100web.DeliveryOrder._lblChkBox4">
-<summary>
-lblChkBox4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:AOS100web.DeliveryOrder._dpSIdate">
 <summary>
 dpSIdate control.
@@ -4349,15 +4385,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:AOS100web.DeliveryOrder._TabPanel1">
 <summary>
 TabPanel1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:AOS100web.DeliveryOrder._txtAddDesc">
-<summary>
-txtAddDesc control.
 </summary>
 <remarks>
 Auto-generated field.
