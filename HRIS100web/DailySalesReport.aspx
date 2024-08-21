@@ -33,7 +33,7 @@
 		function Confirm2() {
 			var confirm_value = document.createElement("INPUT");
 			confirm_value.type = "hidden";
-			confirm_value.name = "confirm_value";
+			confirm_value.name = "confirm_value2";
 			if (confirm_value("Are you sure to VOID DO?")) {
 				confirm_value.value = "Yes";
 			} else {
@@ -45,7 +45,7 @@
 		function Confirm3() {
 			var confirm_value = document.createElement("INPUT");
 			confirm_value.type = "hidden";
-			confirm_value.name = "confirm_value";
+			confirm_value.name = "confirm_value3";
 			if (confirm_value("Are you sure to REMOVE selected Line Item?")) {
 				confirm_value.value = "Yes";
 			} else {
@@ -57,8 +57,8 @@
 		function Confirm4() {
 			var confirm_value = document.createElement("INPUT");
 			confirm_value.type = "hidden";
-			confirm_value.name = "confirm_value";
-			if (confirm_value("DO Save, do you want to Print Now?")) {
+			confirm_value.name = "confirm_value4";
+			if (confirm_value("Are you SURE to UNLOAD DSR?")) {
 				confirm_value.value = "Yes";
 			} else {
 				confirm_value.value = "No";
@@ -86,7 +86,7 @@
 				<asp:LinkButton ID="lbDelete" runat="server" Style="text-decoration: none; background-color: #7fc6f6; padding-right: 5px; font-family: Tahoma; font-size: 14px; color: white; margin-right: 5px; padding-left: 5px; min-height: 22px;" BorderStyle="Solid" ToolTip="Void" Enabled="false">
 					<asp:Image runat="server" imageurl="~/images/delete_16.png" style="vertical-align: middle"/>&nbsp;Void
 				</asp:LinkButton>
-				<asp:LinkButton ID="lbClose" runat="server" OnClick="lbClose_Click" Style="text-decoration: none; background-color: #7fc6f6; font-family: Tahoma; font-size: 14px; color: white; min-height: 22px; padding-left: 5px;"
+				<asp:LinkButton ID="lbClose" runat="server" OnClick="OnConfirm4"  OnClientClick="Confirm4()" Style="text-decoration: none; background-color: #7fc6f6; font-family: Tahoma; font-size: 14px; color: white; min-height: 22px; padding-left: 5px;"
 					BorderStyle="Solid" ToolTip="Close" CssClass="StdBottomR">
 					<asp:Image runat="server" imageurl="~/images/Exit_16.png" style="vertical-align: middle"/>&nbsp;Close&nbsp;
 				</asp:LinkButton>
@@ -123,7 +123,8 @@
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">DSR Date:&nbsp;&nbsp;
 			</td>
 			<td style="border: 1px solid #000000; width: 80px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:TextBox ID="dpTransDate" runat="server" BorderStyle="None" BackColor="White" TextMode="Date" Height="20px" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="DateBox" Width="95%"></asp:TextBox>
+				<asp:TextBox ID="dpTransDateDSR" runat="server" TextMode="Date" BorderStyle="None" BackColor="White" Height="20px" Font-Names="Segoe UI" Font-Size="small" CssClass="DateBox" Width="95%" AutoPostBack="true"></asp:TextBox>
+				
 			</td>
 			<td style="width: 10px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"></td>
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">DSR No.:&nbsp;&nbsp;
@@ -180,12 +181,18 @@
 						<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">DO No.:&nbsp;&nbsp;
 						</td>
 						<td style="border: 1px solid #000000; width: 180px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:DropDownList ID="cboDONo" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" Width="98%">
-							</asp:DropDownList>
+							<%--<asp:DropDownList ID="cboDONo" runat="server" Font-Names="Segoe UI" Font-Size="small" Width="98%" BorderStyle="None" BackColor="White" AutoPostBack="true"  >
+							</asp:DropDownList>--%>
+							<asp:TextBox ID="txtDONo" runat="server" BackColor="White" BorderStyle="None" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="txtBoxC"></asp:TextBox>
+
 						</td>
 						<td style="width: auto; background-color: whitesmoke; text-align: left; padding-left: 0px; font-family: 'Segoe UI'; font-size: small; vertical-align: middle" colspan="5">&nbsp;&nbsp;&nbsp;
+							<asp:ImageButton ID="lbOpenDO" runat="server" ImageUrl="~/images/list_20.png" ToolTip="Open DO List" CssClass="ImgBtn2" />
+							&nbsp;&nbsp;&nbsp;
+
 							<asp:ImageButton ID="cmdAddDO" runat="server" ImageUrl="~/images/add_doc_20.png" ToolTip="Add DO" CssClass="ImgBtn2" />
 							&nbsp;&nbsp;&nbsp;
+
 							<asp:ImageButton ID="cmdRemDO" runat="server" ImageUrl="~/images/rem_doc_20.png" ToolTip="Remove DO"  CssClass="ImgBtn2" />
 
 							<%--<asp:Button ID="cmdAddDO" runat="server" Text="Add DO" Width="100" Height="22" BorderStyle="None" BackColor="Green" ForeColor="White" AutoPostBack="true" />--%>
@@ -206,16 +213,50 @@
 					<%--L3--%>
 					<tr style="height: 620px; background-color: whitesmoke;">
 						<td style="width: 1px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"></td>
-						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="8">
-							<asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" CssClass="PanelStd">
+						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small; vertical-align:top;" colspan="8">
+							<asp:Panel ID="PandgvDOlist" runat="server" ScrollBars="Auto" Visible="false" CssClass="PanelStd">
+								<asp:GridView ID="dgvDOlist" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvDOlist_RowDataBound" OnRowCreated="dgvDOlist_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
+									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1" >
+									<AlternatingRowStyle BackColor="Gainsboro" />
+									<Columns>
+										<asp:CommandField ShowSelectButton="True">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="74px"></ItemStyle>
+										</asp:CommandField>
+										<asp:BoundField DataField="dono">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="transdate" DataFormatString="{0:yyyy-MM-dd}">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="plntno">
+											<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="350px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="totqty" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="totwt" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+
+									</Columns>
+									<FooterStyle BackColor="#CCCCCC" ForeColor="Black" BorderStyle="Solid" />
+									<HeaderStyle BackColor="#007ACC" Font-Bold="True" ForeColor="White" BorderColor="Black" />
+									<PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+									<RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+									<SelectedRowStyle BackColor="Orange" Font-Bold="True" ForeColor="White" />
+									<SortedAscendingCellStyle BackColor="#F1F1F1" />
+									<SortedAscendingHeaderStyle BackColor="#0000A9" />
+									<SortedDescendingCellStyle BackColor="#CAC9C9" />
+									<SortedDescendingHeaderStyle BackColor="#000065" />
+								</asp:GridView>
+							</asp:Panel>
+
+							<asp:Panel ID="PanDgvDOdet" runat="server" ScrollBars="Auto" CssClass="PanelStd">
 								<asp:GridView ID="DgvDOdet" runat="server" AutoGenerateColumns="False" OnRowDataBound="DgvDOdet_RowDataBound"
 									OnRowCreated="DgvDOdet_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
 									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1">
 									<AlternatingRowStyle BackColor="Gainsboro" />
 									<Columns>
-										<asp:BoundField DataField="itmno">
-											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="79px"></ItemStyle>
-										</asp:BoundField>
 										<asp:BoundField DataField="codeno">
 											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="119px"></ItemStyle>
 										</asp:BoundField>
@@ -244,7 +285,7 @@
 
 						</td>
 
-						<td style="border: 1px solid #000000; width: 646px; background-color: floralwhite; text-align: center; padding-left: 2px; font-family: 'Segoe UI'; font-size: small;" colspan="7" rowspan="2">
+						<td style="border: 1px solid #000000; width: 646px; background-color: floralwhite; text-align: center; padding-left: 2px; font-family: 'Segoe UI'; font-size: small; vertical-align: top" colspan="7" rowspan="2">
 							<asp:Panel ID="Panel5" runat="server" ScrollBars="Auto" CssClass="PanelStd">
 								<asp:GridView ID="dgvDOdsr" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvDOdsr_RowDataBound"
 									OnRowCreated="dgvDOdsr_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
@@ -553,19 +594,19 @@
 					</tr>
 					<tr style="height: 26px; background-color: white">
 						<td style="border: 1px solid #000000; width: 80px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtItm" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+							<asp:TextBox ID="txtItmSI" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtCodeNo" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+							<asp:TextBox ID="txtCodeNoSI" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 450px; background-color: white; text-align: center; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-							<asp:DropDownList ID="cboMMdesc" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
+							<asp:DropDownList ID="cboMMdescSI" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtQty" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+							<asp:TextBox ID="txtQtySI" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtWt" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+							<asp:TextBox ID="txtWtSI" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
 							<asp:TextBox ID="txtSP" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
@@ -940,17 +981,10 @@
 
 					</tr>
 
-
 					<tr style="height: 281px; background-color: whitesmoke;">
 						<td style="width: auto; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;" colspan="8"></td>
-
-
 					</tr>
-
 				</table>
-
-
-
 			</ContentTemplate>
 
 		</ajaxToolkit:TabPanel>
@@ -964,10 +998,15 @@
 						<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">WRR No.:&nbsp;&nbsp;
 						</td>
 						<td style="border: 1px solid #000000; width: 180px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:DropDownList ID="cboWRRNo" runat="server" AutoPostBack="true" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="small" Width="98%">
-							</asp:DropDownList>
+							<asp:TextBox ID="txtWRRNo" runat="server" BackColor="White" BorderStyle="None" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="txtBoxC"></asp:TextBox>
+
+							<%--<asp:DropDownList ID="cboWRRNo" runat="server" AutoPostBack="true" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="small" Width="98%">
+							</asp:DropDownList>--%>
 						</td>
 						<td style="width: auto; background-color: whitesmoke; text-align: left; padding-left: 0px; font-family: 'Segoe UI'; font-size: small; vertical-align: middle" colspan="5">&nbsp;&nbsp;&nbsp;
+							<asp:ImageButton ID="lbWRRlist" runat="server" ImageUrl="~/images/list_20.png" ToolTip="Open WRR List" CssClass="ImgBtn2" />
+							&nbsp;&nbsp;&nbsp;
+
 							<asp:ImageButton ID="Button3" runat="server" ImageUrl="~/images/add_doc_20.png" ToolTip="Add WRR" CssClass="ImgBtn2" />
 							&nbsp;&nbsp;&nbsp;
 							<asp:ImageButton ID="Button1" runat="server" ImageUrl="~/images/rem_doc_20.png" ToolTip="Remove WRR"  CssClass="ImgBtn2" />
@@ -990,26 +1029,28 @@
 					<%--L3--%>
 					<tr style="height: 620px; background-color: whitesmoke;">
 						<td style="width: 1px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"></td>
-						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="8">
-							<asp:Panel ID="Panel3" runat="server" ScrollBars="Auto" CssClass="PanelStd">
-								<asp:GridView ID="dgvWRR" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvWRR_RowDataBound"
-									OnRowCreated="dgvWRR_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
-									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="False" CssClass="Grid1">
+						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small; vertical-align: top" colspan="8">
+							<asp:Panel ID="PandgvWRRlist" runat="server" ScrollBars="Auto" Visible="false" CssClass="PanelStd">
+								<asp:GridView ID="dgvWRRlist" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvWRRlist_RowDataBound" OnRowCreated="dgvWRRlist_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
+									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1" >
 									<AlternatingRowStyle BackColor="Gainsboro" />
 									<Columns>
-										<asp:BoundField DataField="itmno">
-											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="79px"></ItemStyle>
+										<asp:CommandField ShowSelectButton="True">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="74px"></ItemStyle>
+										</asp:CommandField>
+										<asp:BoundField DataField="wrrno">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="120px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="codeno">
-											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="119px"></ItemStyle>
+										<asp:BoundField DataField="transdate" DataFormatString="{0:yyyy-MM-dd}">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="100px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="mmdesc">
-											<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="471px"></ItemStyle>
+										<asp:BoundField DataField="plntno">
+											<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="350px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="qty" DataFormatString="{0:#,##0;(#,##0)}">
+										<asp:BoundField DataField="totqty" DataFormatString="{0:#,##0;(#,##0)}">
 											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="wt" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+										<asp:BoundField DataField="totwt" DataFormatString="{0:#,##0.00;(#,##0.00)}">
 											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
 										</asp:BoundField>
 
@@ -1026,14 +1067,46 @@
 								</asp:GridView>
 							</asp:Panel>
 
+							<asp:Panel ID="PandgvWRR" runat="server" ScrollBars="Auto" CssClass="PanelStd">
+								<asp:GridView ID="dgvWRR" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvWRR_RowDataBound"
+									OnRowCreated="dgvWRR_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="False" CssClass="Grid1">
+									<AlternatingRowStyle BackColor="Gainsboro" />
+									<Columns>
+										<asp:BoundField DataField="codeno">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="119px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="mmdesc">
+											<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="471px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="qty" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="wt" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<asp:BoundField DataField="plntno">
+											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="350px"></ItemStyle>
+										</asp:BoundField>
+
+									</Columns>
+									<FooterStyle BackColor="#CCCCCC" ForeColor="Black" BorderStyle="Solid" />
+									<HeaderStyle BackColor="#007ACC" Font-Bold="True" ForeColor="White" BorderColor="Black" />
+									<PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+									<RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+									<SelectedRowStyle BackColor="Orange" Font-Bold="True" ForeColor="White" />
+									<SortedAscendingCellStyle BackColor="#F1F1F1" />
+									<SortedAscendingHeaderStyle BackColor="#0000A9" />
+									<SortedDescendingCellStyle BackColor="#CAC9C9" />
+									<SortedDescendingHeaderStyle BackColor="#000065" />
+								</asp:GridView>
+
+							</asp:Panel>
+
 						</td>
 
 						<td style="border: 1px solid #000000; width: 646px; background-color: floralwhite; text-align: center; padding-left: 2px; font-family: 'Segoe UI'; font-size: small;" colspan="7" rowspan="2">
 							<asp:Panel ID="Panel6" runat="server" ScrollBars="Auto" CssClass="PanelStd">
-
-								<asp:GridView ID="dgvWRRhdr" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvWRRhdr_RowDataBound"
-									OnRowCreated="dgvWRRhdr_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
-									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1">
+								<asp:GridView ID="dgvWRRhdr" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvWRRhdr_RowDataBound" OnRowCreated="dgvWRRhdr_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1">
 									<AlternatingRowStyle BackColor="Gainsboro" />
 									<Columns>
 										<asp:BoundField HeaderText="WRR No."  DataField="wrrno">
@@ -1136,19 +1209,19 @@
 
 					<tr style="height: 26px; background-color: lightgray">
 						<td style="border: 1px solid #000000; width: 80px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtItmPS" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+							<asp:TextBox ID="txtItm" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 100px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtCodeNoPS" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+							<asp:TextBox ID="txtCodeNo" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 450px; background-color: white; text-align: center; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-							<asp:DropDownList ID="cboMMdescPS" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
+							<asp:DropDownList ID="cboMMdesc" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtQtyPS" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+							<asp:TextBox ID="txtQty" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtWtPS" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+							<asp:TextBox ID="txtWt" runat="server" BorderStyle="None" BackColor="White" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
 						</td>
 
 						<td style="width: 26px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;" colspan="4"></td>
@@ -1156,7 +1229,7 @@
 					</tr>
 
 					<tr style="height: 595px; background-color: lightgray">
-						<td style="border: 1px solid #000000; width: auto; background-color: floralwhite; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;" colspan="8">
+						<td style="border: 1px solid #000000; width: auto; background-color: floralwhite; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small; vertical-align: top;" colspan="8">
 							<asp:Panel ID="Panel7" runat="server" ScrollBars="Auto" CssClass="PanelStd">
 								<asp:GridView ID="dgvPMstock" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvPMstock_RowDataBound" OnRowCreated="dgvPMstock_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
 									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="False" CssClass="Grid1">
@@ -1265,7 +1338,7 @@
 						<td style="width: 1px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"></td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">Report Option:&nbsp;&nbsp;</td>
 						<td style="border: 1px solid #000000; width: 130px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;" ">
-							<asp:DropDownList ID="cboShrUnit" runat="server" BorderStyle="None" BackColor="White" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
+							<asp:DropDownList ID="cboShrUnit" runat="server" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox" BorderStyle="None" BackColor="White" ></asp:DropDownList>
 						</td>
 						<td style="width: 600px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"  colspan="13"></td>
 					</tr>
@@ -1276,25 +1349,79 @@
 					<%--L3--%>
 					<tr style="height: 620px; background-color: whitesmoke;">
 						<td style="width: 1px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;"></td>
-						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="15">
+						<td style="border: 1px solid #000000; width: 1px; background-color: floralwhite; text-align: center; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small; vertical-align:top " colspan="15">
 							<asp:Panel ID="Panel8" runat="server" ScrollBars="Auto" CssClass="PanelStd">
 								<asp:GridView ID="dgvShrink" runat="server" AutoGenerateColumns="False" OnRowDataBound="dgvShrink_RowDataBound" OnRowCreated="dgvShrink_RowCreated" Font-Names="Segoe UI" Font-Size="Small" BackColor="White" BorderColor="#999999" BorderStyle="Solid"
 									BorderWidth="1px" CellPadding="3" GridLines="Vertical" ShowHeader="True" CssClass="Grid1">
 									<AlternatingRowStyle BackColor="Gainsboro" />
 									<Columns>
-										<asp:BoundField DataField="itmno">
-											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="79px"></ItemStyle>
-										</asp:BoundField>
+										<%--col 0--%>
 										<asp:BoundField DataField="codeno">
 											<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="119px"></ItemStyle>
 										</asp:BoundField>
+										<%--col 1--%>
 										<asp:BoundField DataField="mmdesc">
 											<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="471px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="qty" DataFormatString="{0:#,##0;(#,##0)}">
+										<%--col 2 AM stock--%>
+										<asp:BoundField DataField="qty_amstock" DataFormatString="{0:#,##0;(#,##0)}">
 											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
 										</asp:BoundField>
-										<asp:BoundField DataField="wt" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+										<%--col 3--%>
+										<asp:BoundField DataField="wt_amstock" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 4 DO --%>
+										<asp:BoundField DataField="qty_do" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 5--%>
+										<asp:BoundField DataField="wt_do" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 6 Total Load--%>
+										<asp:BoundField DataField="qty_totload" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 7--%>
+										<asp:BoundField DataField="wt_totload" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 8 Sales --%>
+										<asp:BoundField DataField="qty_sales" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 9--%>
+										<asp:BoundField DataField="wt_sales" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 10 WRR --%>
+										<asp:BoundField DataField="qty_wrr" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 11--%>
+										<asp:BoundField DataField="wt_wrr" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 12 PM stock--%>
+										<asp:BoundField DataField="qty_pmstock" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 13--%>
+										<asp:BoundField DataField="wt_pmstock" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 14 var. qty --%>
+										<asp:BoundField DataField="qty_var" DataFormatString="{0:#,##0;(#,##0)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+
+										<%--col 15 Shrink wt--%>
+										<asp:BoundField DataField="wt_var" DataFormatString="{0:#,##0.00;(#,##0.00)}">
+											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
+										</asp:BoundField>
+										<%--col 16 %age --%>
+										<asp:BoundField DataField="perc_wt" DataFormatString="{0:#,##0.00%;(#,##0.00%)}">
 											<ItemStyle HorizontalAlign="Right" VerticalAlign="Middle" Width="120px"></ItemStyle>
 										</asp:BoundField>
 
@@ -1308,6 +1435,7 @@
 									<SortedAscendingHeaderStyle BackColor="#0000A9" />
 									<SortedDescendingCellStyle BackColor="#CAC9C9" />
 									<SortedDescendingHeaderStyle BackColor="#000065" />
+
 								</asp:GridView>
 							</asp:Panel>
 						</td>
@@ -1325,11 +1453,11 @@
 						<%--C9--%>
 						<td style="border: 1px solid #000000; width: 100px; background-color: whitesmoke; text-align: right; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
 
-							<asp:Label ID="Label9" runat="server" Text="0" ForeColor="Red"></asp:Label>&nbsp;&nbsp;
+							<asp:Label ID="lblVarQty2" runat="server" Text="0" ForeColor="Red"></asp:Label>&nbsp;&nbsp;
 
 						</td>
 						<td style="border: 1px solid #000000; width: 100px; background-color: whitesmoke; text-align: right; padding-left: 0px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:Label ID="Label10" runat="server" Text="0.00" ForeColor="Red"></asp:Label>&nbsp;&nbsp;
+							<asp:Label ID="lblTotVar" runat="server" Text="0.00" ForeColor="Red"></asp:Label>&nbsp;&nbsp;
 						</td>
 					</tr>
 				</table>

@@ -121,12 +121,12 @@
 			</td>
 
 			<%--R1C2--%>
-			<td style="border: 1px solid #000000; width: 100px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 100px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
 				<%--<asp:LinkButton ID="lbReLoadDoc" runat="server" Style="text-decoration: none; background-color: lightgray; float: left; padding-right: 2px;">&nbsp;
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;--%>
 
-				<asp:TextBox ID="txtDONo" runat="server" Font-Names="Segoe UI" Font-Size="small" ReadOnly="true" AutoPostBack="true" MaxLength="8" CssClass="txtBoxC"></asp:TextBox>
+				<asp:TextBox ID="txtDONo" runat="server" Font-Names="Segoe UI" Font-Size="small" ReadOnly="true" AutoPostBack="true" MaxLength="8" CssClass="txtBoxC" BackColor="White" BorderStyle="None" ></asp:TextBox>
 
 			</td>
 
@@ -135,8 +135,8 @@
 			</td>
 
 			<%--R1C4--%>
-			<td style="border: 1px solid #000000; width: 200px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:DropDownList ID="cboPlnt" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" Width="92%">
+			<td style="border: 1px solid #000000; width: 200px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+				<asp:DropDownList ID="cboPlnt" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" Width="92%" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
 				<asp:LinkButton ID="lbPlant" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
@@ -151,8 +151,8 @@
 			</td>
 
 			<%--R1C6to7--%>
-			<td style="border: 1px solid #000000; width: 250px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:DropDownList ID="cboSmnName" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox">
+			<td style="border: 1px solid #000000; width: 250px; background-color:white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+				<asp:DropDownList ID="cboSmnName" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
 			</td>
 
@@ -161,14 +161,14 @@
 			</td>
 
 			<%--R1C9--%>
-			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
 				<asp:TextBox ID="dpTransDate" runat="server" TextMode="Date" Width="120px" Height="99%" Font-Names="Segoe UI"
-					Font-Size="small" CssClass="DateBox"></asp:TextBox>
+					Font-Size="small" CssClass="DateBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<%--R1C10--%>
 			<td style="width: 300px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:LinkButton ID="btnUpdate" runat="server" Style="text-decoration: none; background-color: lightgray; float: left; padding-right: 2px;">
+				<asp:LinkButton ID="btnUpdate" runat="server" Style="text-decoration: none; background-color: white; float: left; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;
 			</td>
@@ -189,11 +189,11 @@
 			</td>
 
 			<%--L2C2--%>
-			<td style="border: 1px solid #000000; width: 100px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 100px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
 				<%--<asp:LinkButton ID="lbSONo" runat="server" Style="text-decoration: none; background-color: lightgray; float: left; padding-right: 2px;">&nbsp;
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;--%>
-				<asp:TextBox ID="txtSONo" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="txtBoxC"></asp:TextBox>
+				<asp:TextBox ID="txtSONo" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="txtBoxC" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<%--L2C3--%>
@@ -201,11 +201,11 @@
 			</td>
 
 			<%--L2C4-7--%>
-			<td style="border: 1px solid #000000; width: 350px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-				<asp:DropDownList ID="cboMovType" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3">
+			<td style="border: 1px solid #000000; width: 350px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
+				<asp:DropDownList ID="cboMovType" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
 
-				<asp:LinkButton ID="lbMovType" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">
+				<asp:LinkButton ID="lbMovType" runat="server" Style="text-decoration: none; background-color: white; float: right; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;
 			</td>
@@ -215,8 +215,8 @@
 			</td>
 
 			<%--L2C9-10--%>
-			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:TextBox ID="txtPOno" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+			<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+				<asp:TextBox ID="txtPOno" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="TxtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 
 			</td>
 
@@ -235,8 +235,8 @@
 			</td>
 
 			<%--L3C2to4--%>
-			<td style="border: 1px solid #000000; width: 430px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-				<asp:DropDownList ID="cboCustName" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3">
+			<td style="border: 1px solid #000000; width: 430px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
+				<asp:DropDownList ID="cboCustName" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
 				<asp:LinkButton ID="lbCustName" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
@@ -249,11 +249,11 @@
 			</td>
 
 			<%--L3C6--%>
-			<td style="border: 1px solid #000000; width: 100px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 100px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
 
-				<asp:DropDownList ID="cboPClass" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox2">
+				<asp:DropDownList ID="cboPClass" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox2" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
-				<asp:LinkButton ID="lbPClass" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">
+				<asp:LinkButton ID="lbPClass" runat="server" Style="text-decoration: none; background-color: white; float: right; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;
 			</td>
@@ -264,10 +264,10 @@
 				
 			</td>
 
-			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="2">
-				<asp:DropDownList ID="cboFGmmGrp" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" Width="93%">
+			<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="2">
+				<asp:DropDownList ID="cboFGmmGrp" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" Width="93%" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
-				<asp:LinkButton ID="lbFGmmGrp" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 0px;">&nbsp;
+				<asp:LinkButton ID="lbFGmmGrp" runat="server" Style="text-decoration: none; background-color: white; float: right; padding-right: 0px;">&nbsp;
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>
 			</td>
@@ -277,10 +277,10 @@
 		<tr style="height: 26px; background-color: lightgray">
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">Ship To:&nbsp;&nbsp;
 			</td>
-			<td style="border: 1px solid #000000; width: 430px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-				<asp:DropDownList ID="cboShipTo" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3">
+			<td style="border: 1px solid #000000; width: 430px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
+				<asp:DropDownList ID="cboShipTo" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox3" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
-				<asp:LinkButton ID="lbShipTo" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">
+				<asp:LinkButton ID="lbShipTo" runat="server" Style="text-decoration: none; background-color: white; float: right; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>&nbsp;
 			</td>
@@ -289,10 +289,10 @@
 				
 			</td>
 
-			<td style="border: 1px solid #000000; width: 250px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:DropDownList ID="cboPlnt2" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox2">
+			<td style="border: 1px solid #000000; width: 250px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+				<asp:DropDownList ID="cboPlnt2" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" CssClass="cboBox2" BackColor="White" BorderStyle="None">
 				</asp:DropDownList>
-				<asp:LinkButton ID="lbPlnt2" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; padding-right: 2px;">&nbsp;
+				<asp:LinkButton ID="lbPlnt2" runat="server" Style="text-decoration: none; background-color: white; float: right; padding-right: 2px;">&nbsp;
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>
 
@@ -311,21 +311,21 @@
 		<tr style="height: 26px; background-color: lightgray">
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">Ref No:&nbsp;&nbsp;
 			</td>
-			<td style="border: 1px solid #000000; width: 100px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:TextBox ID="txtRefNo" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+			<td style="border: 1px solid #000000; width: 100px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" BackColor="White" BorderStyle="None">
+				<asp:TextBox ID="txtRefNo" runat="server" Font-Names="Segoe UI" Font-Size="small" AutoPostBack="true" CssClass="TxtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">Driver:&nbsp;&nbsp;
 				
 			</td>
-			<td style="border: 1px solid #000000; width: auto; background-color: lightgray; text-align: left; padding-left: 1px; padding-right: 2px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:TextBox ID="txtDriver" runat="server" Font-Names="Segoe UI" Font-Size="small" CssClass="txtBoxL"></asp:TextBox>
+			<td style="border: 1px solid #000000; width: auto; background-color: white; text-align: left; padding-left: 1px; padding-right: 2px; font-family: 'Segoe UI'; font-size: small;">
+				<asp:TextBox ID="txtDriver" runat="server" Font-Names="Segoe UI" Font-Size="small" CssClass="txtBoxL" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">Plate No.:&nbsp;&nbsp;
 			</td>
 
-			<td style="border: 1px solid #000000; width: 250px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
-				<asp:TextBox ID="txtPlNo" runat="server" Font-Names="Segoe UI" Font-Size="small" Width="96%" CssClass="txtBoxC"></asp:TextBox>
+			<td style="border: 1px solid #000000; width: 250px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" >
+				<asp:TextBox ID="txtPlNo" runat="server" Font-Names="Segoe UI" Font-Size="small" Width="96%" CssClass="txtBoxC" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<%--<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">New Plant:&nbsp;&nbsp;
@@ -348,8 +348,8 @@
 		<tr style="height: 26px; background-color: lightgray">
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">Remarks:&nbsp;&nbsp;
 			</td>
-			<td style="border: 1px solid #000000; width: 650px; background-color: lightgray; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-				<asp:TextBox ID="txtRemarks" runat="server" Font-Names="Segoe UI" Font-Size="small" CssClass="txtBoxL"></asp:TextBox>
+			<td style="border: 1px solid #000000; width: 650px; background-color: white; text-align: left; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;" colspan="3">
+				<asp:TextBox ID="txtRemarks" runat="server" Font-Names="Segoe UI" Font-Size="small" CssClass="txtBoxL" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<td style="border: 1px solid #000000; width: auto; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
@@ -357,16 +357,16 @@
 			</td>
 
 			<td style="border: 1px solid #000000; width: 120px; height: 26px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small; vertical-align:middle;">
-				<asp:CheckBox ID="CheckBox4" runat="server" ToolTip="Check If DR Only" AutoPostBack="true" />&nbsp;
-				<asp:Label ID="lblChkBox4" runat="server" Text="With SI"></asp:Label>&nbsp;&nbsp;
+				<%--<asp:CheckBox ID="CheckBox4" runat="server" ToolTip="Check If DR Only" AutoPostBack="true" />--%>&nbsp;
+				<%--<asp:Label ID="lblChkBox4" runat="server" Text="With SI"></asp:Label>&nbsp;&nbsp;--%>
 			</td>
 
 			<td style="border: 1px solid #000000; width: 80px; background-color: lightgray; text-align: right; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">SI Date:&nbsp;&nbsp;
 			</td>
 
-			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
 				<asp:TextBox ID="dpSIdate" runat="server" TextMode="Date" Width="120px" Height="99%" Font-Names="Segoe UI"
-					Font-Size="small" CssClass="DateBox"></asp:TextBox>
+					Font-Size="small" CssClass="DateBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 			</td>
 
 			<td style="width: 250px; background-color: lightgray; text-align: center; padding-left: 1px; font-family: 'Segoe UI'; font-size: small;">
@@ -400,7 +400,7 @@
 						</td>
 						<td style="border: 1px solid #000000; width: 450px; background-color: lightgray; text-align: left; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;" colspan="3">&nbsp;
 							Description &nbsp;&nbsp;
-							<asp:TextBox ID="txtAddDesc" runat="server" Font-Names="Segoe UI" Font-Size="Small" Width="78%" AutoPostBack="true" ></asp:TextBox>
+							<%--<asp:TextBox ID="txtAddDesc" runat="server" Font-Names="Segoe UI" Font-Size="Small" Width="78%" AutoPostBack="true" BackColor="White" BorderStyle="None" ></asp:TextBox>--%>
 						</td>
 						<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">&nbsp;
 							<asp:Label ID="lblQtPk" runat="server" Text="0" ForeColor="Red"></asp:Label>
@@ -428,16 +428,16 @@
 						</td>
 					</tr>
 					<tr style="height: 26px; background-color: lightgray">
-						<td style="border: 1px solid #000000; width: 80px; background-color: whitesmoke; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtItm" runat="server" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox"></asp:TextBox>
+						<td style="border: 1px solid #000000; width: 80px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:TextBox ID="txtItm" runat="server" Font-Names="Segoe UI" Font-Size="Small" Text="1" AutoPostBack="true" CssClass="TxtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtCodeNo" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="Small" CssClass="TxtBox"></asp:TextBox>
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 1px; padding-right: 1px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:TextBox ID="txtCodeNo" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="Small" CssClass="TxtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 450px; background-color: whitesmoke; text-align: center; font-family: 'Segoe UI'; font-size: small;" colspan="3">
-							<asp:DropDownList ID="cboMMdesc" runat="server" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
+						<td style="border: 1px solid #000000; width: 450px; background-color: white; text-align: center; font-family: 'Segoe UI'; font-size: small;" colspan="3">
+							<asp:DropDownList ID="cboMMdesc" runat="server" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox" BackColor="White" BorderStyle="None"></asp:DropDownList>
 
 							<%--<editable:EditableDropDownList ID="cboMMdesc" runat="server" AutoPostBack="true" Font-Names="Segoe UI" Font-Size="small" > 
 
@@ -445,28 +445,28 @@
 
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtQty" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:TextBox ID="txtQty" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtWt" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:TextBox ID="txtWt" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:TextBox ID="txtSP" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox"></asp:TextBox>
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:TextBox ID="txtSP" runat="server" Font-Names="Segoe UI" Font-Size="Small" AutoPostBack="true" CssClass="txtAmtBox" BackColor="White" BorderStyle="None"></asp:TextBox>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
 							<asp:Label ID="lblAmt" runat="server" Text="0.00" CssClass="lblLabelAmt"></asp:Label>
 						</td>
 
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: center; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
 							<asp:Label ID="lblSLoc" runat="server" Text=""></asp:Label>
 						</td>
 						
-						<td style="border: 1px solid #000000; width: 120px; background-color: whitesmoke; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
-							<asp:DropDownList ID="cboLotNo" runat="server" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox"></asp:DropDownList>
+						<td style="border: 1px solid #000000; width: 120px; background-color: white; text-align: right; padding-left: 0px; font-family: 'Segoe UI'; font-size: small;">
+							<asp:DropDownList ID="cboLotNo" runat="server" AutoPostBack="True" Font-Names="Segoe UI" Font-Size="Small" CssClass="cboBox" BackColor="White" BorderStyle="None"></asp:DropDownList>
 						</td>
 					</tr>
 					<tr style="height: auto; background-color: lightgray">

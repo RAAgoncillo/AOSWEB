@@ -405,7 +405,7 @@ Public Class DeliveryOrder
 		lblTotWt.Text = ""
 		lblTotAmt.Text = ""
 		tssInvNo.Text = "00000000"
-		CheckBox4.Checked = False
+
 		tssDocStat.Text = "New"
 		tssErrorMsg.Text = "Okay"
 		DgvDOdet.DataSource = Nothing
@@ -545,7 +545,7 @@ Public Class DeliveryOrder
 
 		Select Case cboMovType.Text.Substring(0, 3)
 			Case "121"
-				CheckBox4.Visible = False
+
 				admMMtype = "ALL"
 				cboSmnName.Text = Nothing
 
@@ -555,8 +555,7 @@ Public Class DeliveryOrder
 				cboPlnt2.Enabled = False
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
-				txtAddDesc.Visible = False
-				CheckBox4.Visible = False
+
 				admMMtype = "RM"
 				CheckBox1.Checked = True
 				cboSmnName.Text = Nothing
@@ -578,11 +577,11 @@ Public Class DeliveryOrder
 				cboPlnt2.Text = Nothing
 
 				txtSONo.Focus()
-				txtAddDesc.Visible = False
+
 				'Label6.Text = "SO No.:"
 				'GroupBox1.Visible = False PClass
 				cboSmnName.Text = Nothing
-				CheckBox4.Visible = False
+
 				'cbSP.Visible = False
 				admMMtype = "Packaging"
 
@@ -600,11 +599,11 @@ Public Class DeliveryOrder
 				cboPlnt2.Enabled = True
 				PopNewPlant()
 				txtUMmatl.Visible = True
-				txtAddDesc.Visible = False
+
 				'Label6.Text = "SO No.:"
 				'GroupBox1.Visible = False
 
-				CheckBox4.Visible = False
+
 				'cbSP.Visible = False
 				admMMtype = "Trans"
 
@@ -627,10 +626,10 @@ Public Class DeliveryOrder
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
 
-				txtAddDesc.Visible = False
+
 				'Label6.Text = "SO No.:"
 				'GroupBox1.Visible = False
-				CheckBox4.Visible = False
+
 				'cbSP.Visible = False
 				admMMtype = "ALL"
 				cboSmnName.Text = Nothing
@@ -641,8 +640,7 @@ Public Class DeliveryOrder
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
 				cboFGmmGrp.Enabled = False
-				txtAddDesc.Visible = True
-				CheckBox4.Visible = True
+
 
 				'Label6.Text = "SO No.:"
 				'UpdateBatchToolStripMenuItem.Visible = True
@@ -658,8 +656,7 @@ Public Class DeliveryOrder
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
 
-				txtAddDesc.Visible = True
-				CheckBox4.Visible = True
+
 				'txtCustNo.ReadOnly = False
 				'txtShipTo.ReadOnly = False
 				'Label6.Text = "SO No.:"
@@ -673,8 +670,7 @@ Public Class DeliveryOrder
 				cboPlnt2.Enabled = False
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
-				txtAddDesc.Visible = True
-				CheckBox4.Visible = False
+
 
 				PopPClass()
 				'Label6.Text = "SO No.:"
@@ -686,10 +682,10 @@ Public Class DeliveryOrder
 				cboPlnt2.Enabled = False
 				cboPlnt2.Items.Clear()
 				cboPlnt2.Text = Nothing
-				txtAddDesc.Visible = False
+
 				'Label6.Text = "SO No.:"
 				'GroupBox1.Visible = False
-				CheckBox4.Visible = False
+
 				'cbSP.Visible = False
 				admMMtype = "ALL"
 				cboSmnName.Text = Nothing
@@ -1332,13 +1328,6 @@ Public Class DeliveryOrder
 
 	End Sub
 
-	Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
-		If CheckBox4.Checked = True Then
-			lblChkBox4.Text = "DR Only"
-		Else
-			lblChkBox4.Text = "With SI"
-		End If
-	End Sub
 
 	Private Sub lbPlant_Click(sender As Object, e As EventArgs) Handles lbPlant.Click
 		If cboPlnt.Text = Nothing Then
@@ -1397,11 +1386,6 @@ Public Class DeliveryOrder
 			AdmMsgBox("Date is blank")
 			Exit Sub
 
-		ElseIf CheckBox4.Checked = True Then
-			If dpSIdate.Text = Nothing Then
-				AdmMsgBox("SI Date is blank")
-				Exit Sub
-			End If
 		End If
 
 		txtItm.Text = DgvDOdet.SelectedRow.Cells(1).Text
@@ -1423,7 +1407,7 @@ Public Class DeliveryOrder
 	End Sub
 
 	Protected Sub GetLineToEdit()
-		dt = GetDataTable("select ifnull(qty,0),ifnull(wt,0),ifnull(sp,0),ifnull(itmamt,0),adddesc from tempissdettbl " &
+		dt = GetDataTable("select ifnull(qty,0),ifnull(wt,0),ifnull(sp,0),ifnull(itmamt,0) from tempissdettbl " &
 						  "where itmno = " & txtItm.Text & " and user = '" & lblUser.Text & "'")
 		If Not CBool(dt.Rows.Count) Then
 
@@ -1433,7 +1417,7 @@ Public Class DeliveryOrder
 				txtWt.Text = Format(CDbl(dr.Item(1).ToString()), "#,##0.00")
 				txtSP.Text = Format(CDbl(dr.Item(2).ToString()), "#,##0.00")
 				lblAmt.Text = Format(CDbl(dr.Item(3).ToString()), "#,##0.00")
-				txtAddDesc.Text = dr.Item(4).ToString() & ""
+
 
 			Next
 
@@ -1462,7 +1446,7 @@ Public Class DeliveryOrder
 		cboLotNo.Text = Nothing
 		txtSP.Text = ""
 		lblAmt.Text = ""
-		txtAddDesc.Text = ""
+
 		txtUMmatl.Text = ""
 		lblBillRef.Text = ""
 		txtCodeNo.ReadOnly = False
@@ -1549,9 +1533,7 @@ Public Class DeliveryOrder
 			For Each dr As DataRow In dt.Rows
 				lblBillRef.Text = dr.Item(0).ToString()
 				If CheckBox3.Checked = True Then
-					txtAddDesc.Text = dr.Item(1).ToString()
-				Else
-					txtAddDesc.Text = ""
+
 				End If
 
 				txtUMmatl.Text = dr.Item(2).ToString() & ""
@@ -1920,14 +1902,6 @@ Public Class DeliveryOrder
 
 		End Select
 
-		If CheckBox7.Checked = True Then
-			admAddDesc = txtAddDesc.Text & " - (DEAL)"
-			admDealRem = "Y"
-
-		Else
-			admAddDesc = txtAddDesc.Text
-			admDealRem = "N"
-		End If
 
 		sql = "insert into tempissdettbl(itmno,codeno,qty,wt,sp,itmamt,sloc,lotno,adddesc,um,billref,user)values" &
 			  "('" & txtItm.Text & "','" & txtCodeNo.Text & "'," & CDbl(IIf(txtQty.Text = "", 0, txtQty.Text)) & "," &
@@ -2363,21 +2337,6 @@ Public Class DeliveryOrder
 						ExecuteNonQuery(sql)
 				End Select
 
-				If CheckBox4.Checked = True Then
-					sql = "update isshdrtbl set nosi = 'Yes' where dono = '" & Trim(txtDONo.Text) & "'"
-					ExecuteNonQuery(sql)
-
-					AutoInvSaveProc()
-
-					sql = "update isshdrtbl set dsrno = '" & tssInvNo.Text & "',dsrstat = 'Served'," &
-						  "salesdoc = 'DR' where dono = '" & txtDONo.Text & "'"
-					ExecuteNonQuery(sql)
-
-				Else
-					sql = "update isshdrtbl set nosi = 'No' where dono = '" & Trim(txtDONo.Text) & "'"
-					ExecuteNonQuery(sql)
-				End If
-
 			Case "613"
 				Select Case vLoggedBussArea
 					Case "8100", "8200"
@@ -2426,16 +2385,6 @@ Public Class DeliveryOrder
 						ExecuteNonQuery(sql)
 				End Select
 
-				If CheckBox4.Checked = True Then
-					sql = "update isshdrtbl set nosi = 'Yes' where dono = '" & Trim(txtDONo.Text) & "'"
-					ExecuteNonQuery(sql)
-
-					AutoInvSaveProc()
-
-				Else
-					sql = "update isshdrtbl set nosi = 'No' where dono = '" & Trim(txtDONo.Text) & "'"
-					ExecuteNonQuery(sql)
-				End If
 
 			Case "613"
 				Select Case vLoggedBussArea
@@ -3056,14 +3005,6 @@ Public Class DeliveryOrder
 
 				btnUpdate.Visible = True
 
-				If CheckBox4.Checked = True Then
-					btnSIdateUpdate.Visible = True
-					lblChkBox4.Text = "DR Only"
-				Else
-					btnSIdateUpdate.Visible = False
-					lblChkBox4.Text = "With SI"
-				End If
-
 				txtDONo.ReadOnly = True
 				'btnOpenSO.Enabled = False
 
@@ -3117,12 +3058,7 @@ Public Class DeliveryOrder
 				txtPlNo.Text = dr.Item(10).ToString() & ""
 				txtRemarks.Text = dr.Item(11).ToString() & ""
 				cboCheckBy.Text = dr.Item(12).ToString() & ""
-				Select Case dr.Item(13).ToString() & ""
-					Case "Yes"
-						CheckBox4.Checked = True
-					Case Else
-						CheckBox4.Checked = False
-				End Select
+
 
 				tssDRprtOpt.Text = dr.Item(14).ToString() & ""
 
@@ -3154,27 +3090,7 @@ Public Class DeliveryOrder
 
 		End Select
 
-		If CheckBox4.Checked = True Then
-			btnSIdateUpdate.Enabled = True
-			lblChkBox4.Text = "DR Only"
-			dt = GetDataTable("select invno,transdate from saleshdrtbl where dono = '" & txtDONo.Text & "'")
-			If Not CBool(dt.Rows.Count) Then
-				tssErrorMsg.Text = "Not found."
-			Else
-				For Each dr As DataRow In dt.Rows
-					tssInvNo.Text = dr.Item(0).ToString()
-					dpSIdate.Text = Format(CDate(dr.Item(1).ToString()), "yyyy-MM-dd")
-					admSIdate = dr.Item(1).ToString()
-				Next
-			End If
 
-			dt.Dispose()
-
-		Else
-			btnSIdateUpdate.Enabled = False
-			lblChkBox4.Text = "With SI"
-			tssInvNo.Text = "00000000"
-		End If
 
 		FillDOdetData()
 		FillLvSOdet()
@@ -3390,87 +3306,7 @@ Public Class DeliveryOrder
 									sql = "update sohdrtbl set delstat = 'open' where sono = '" & txtSONo.Text & "'"
 									ExecuteNonQuery(sql)
 
-									If CheckBox4.Checked = True Then
-										'check for GL transaction
-										If CDate(dpTransDate.Text) < vTransMon Then
-											AdmMsgBox(Format(CDate(dpTransDate.Text), "MMM yyyy") & " is Already CLOSED")
-											Exit Sub
-										Else
-											dt = GetDataTable("select * from gljvhdrtbl where sourcedoc = 'Sales' and " &
-															  "'" & Format(CDate(dpTransDate.Text), "yyyy-MM-dd") & "' " &
-															  "between dfrom and dto")
-											If Not CBool(dt.Rows.Count) Then
-												sql = "update isshdrtbl set status = 'void',dsrno = '00000' " &
-													  "where dono = '" & txtDONo.Text & "'"
-												ExecuteNonQuery(sql)
-
-												getSOItemBals()
-
-											Else
-												AdmMsgBox("Sales GL Transaction already Processed")
-												Exit Sub
-
-											End If
-
-										End If
-
-										dt.Dispose()
-
-										dt = GetDataTable("select * from modtranstattbl where tc = '" & lblTC.Text & "' and monstat = 'Close' and " &
-														  "'" & Format(CDate(dpTransDate.Text), "yyyy-MM-dd") & "' between dfrom and dto")
-										If Not CBool(dt.Rows.Count) Then
-											sql = "update isshdrtbl set status = 'void',dsrno = '00000' " &
-												  "where dono = '" & txtDONo.Text & "'"
-											ExecuteNonQuery(sql)
-										Else
-											MsgBox("Sales Transaction already CLOSED", MsgBoxStyle.Critical)
-											Exit Sub
-
-										End If
-
-										dt.Dispose()
-
-										sql = "update saleshdrtbl set status = 'void' where invno = '" & tssInvNo.Text & "'"
-										ExecuteNonQuery(sql)
-
-										sql = "update salesdettbl set status = 'void' where invno = '" & tssInvNo.Text & "'"
-										ExecuteNonQuery(sql)
-
-										sql = "update coldettbl set refno = orno,tc = '60' where refno = '" & tssInvNo.Text & "' and " &
-											  "tc = '53'"
-										ExecuteNonQuery(sql)
-
-										sql = "delete from gltranstbl where docno = '" & tssInvNo.Text & "' and tc = '53' and jvsource = 'Sales'"
-										ExecuteNonQuery(sql)
-
-
-									Else
-										If CDate(dpTransDate.Text) < vTransMon Then
-											AdmMsgBox(Format(CDate(dpTransDate.Text), "MMM yyyy") & " is Already CLOSED")
-											Exit Sub
-										Else
-											dt = GetDataTable("select * from gljvhdrtbl where sourcedoc = 'Sales' and " &
-															  "'" & Format(CDate(dpTransDate.Text), "yyyy-MM-dd") & "' " &
-															  "between dfrom and dto")
-											If Not CBool(dt.Rows.Count) Then
-												sql = "update isshdrtbl set status = 'void',dsrno = '00000' " &
-													  "where dono = '" & txtDONo.Text & "'"
-												ExecuteNonQuery(sql)
-											Else
-												MsgBox("Sales GL Transaction already Processed", MsgBoxStyle.Critical)
-												Exit Sub
-
-											End If
-
-											getSOItemBals()
-
-										End If
-
-										dt.Dispose()
-
-									End If
-
-								Case Else
+							Case Else
 									sql = "update isshdrtbl set status = 'void',dsrno = '00000' " &
 										  "where dono = '" & txtDONo.Text & "' and branch = '" & vLoggedBranch & "'"
 									ExecuteNonQuery(sql)

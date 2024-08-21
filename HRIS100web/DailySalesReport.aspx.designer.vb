@@ -95,13 +95,13 @@ Partial Public Class DailySalesReport
     Protected WithEvents cboSmnName As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''dpTransDate control.
+    '''dpTransDateDSR control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents dpTransDate As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents dpTransDateDSR As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtDSRNo control.
@@ -158,13 +158,22 @@ Partial Public Class DailySalesReport
     Protected WithEvents TabPage1 As Global.AjaxControlToolkit.TabPanel
 
     '''<summary>
-    '''cboDONo control.
+    '''txtDONo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboDONo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtDONo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lbOpenDO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbOpenDO As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''cmdAddDO control.
@@ -185,13 +194,31 @@ Partial Public Class DailySalesReport
     Protected WithEvents cmdRemDO As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Panel1 control.
+    '''PandgvDOlist control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents PandgvDOlist As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''dgvDOlist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dgvDOlist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''PanDgvDOdet control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PanDgvDOdet As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''DgvDOdet control.
@@ -491,49 +518,49 @@ Partial Public Class DailySalesReport
     Protected WithEvents lblBillRef As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtItm control.
+    '''txtItmSI control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtItm As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtItmSI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtCodeNo control.
+    '''txtCodeNoSI control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCodeNo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtCodeNoSI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''cboMMdesc control.
+    '''cboMMdescSI control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboMMdesc As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cboMMdescSI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''txtQty control.
+    '''txtQtySI control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtQty As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtQtySI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtWt control.
+    '''txtWtSI control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtWt As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtWtSI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtSP control.
@@ -905,13 +932,22 @@ Partial Public Class DailySalesReport
     Protected WithEvents TabPage4 As Global.AjaxControlToolkit.TabPanel
 
     '''<summary>
-    '''cboWRRNo control.
+    '''txtWRRNo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboWRRNo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtWRRNo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lbWRRlist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbWRRlist As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''Button3 control.
@@ -932,13 +968,31 @@ Partial Public Class DailySalesReport
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Panel3 control.
+    '''PandgvWRRlist control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents PandgvWRRlist As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''dgvWRRlist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dgvWRRlist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''PandgvWRR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PandgvWRR As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''dgvWRR control.
@@ -1013,49 +1067,49 @@ Partial Public Class DailySalesReport
     Protected WithEvents ImageButton4 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''txtItmPS control.
+    '''txtItm control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtItmPS As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtItm As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtCodeNoPS control.
+    '''txtCodeNo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCodeNoPS As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtCodeNo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''cboMMdescPS control.
+    '''cboMMdesc control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboMMdescPS As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cboMMdesc As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''txtQtyPS control.
+    '''txtQty control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtQtyPS As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtQty As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtWtPS control.
+    '''txtWt control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtWtPS As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtWt As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Panel7 control.
@@ -1175,22 +1229,22 @@ Partial Public Class DailySalesReport
     Protected WithEvents dgvShrink As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Label9 control.
+    '''lblVarQty2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblVarQty2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label10 control.
+    '''lblTotVar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTotVar As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TabPage7 control.
