@@ -59,6 +59,24 @@ Partial Public Class FinancialAccounting
     Protected WithEvents lbCALiq As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''lbDocPost control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbDocPost As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''lbDSR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbDSR As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''lbARrep control.
     '''</summary>
     '''<remarks>

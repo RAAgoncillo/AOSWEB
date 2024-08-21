@@ -183,4 +183,27 @@ Public Class FinancialAccounting
 		End If
 
 	End Sub
+
+	Private Sub lbDocPost_Click(sender As Object, e As EventArgs) Handles lbDocPost.Click
+		If IsAllowed(lblGrpUser.Text, "027", 1) = True Then
+			Response.Redirect("APapp.aspx")
+
+		Else
+			AdmMsgBox("You're not allowed to this Module")
+			Response.Redirect("FinancialAccounting.aspx")
+
+		End If
+	End Sub
+
+	Private Sub lbDSR_Click(sender As Object, e As EventArgs) Handles lbDSR.Click
+		If IsAllowed(lblGrpUser.Text, "046", 1) = True Then
+			Response.Redirect("DailySalesReport.aspx")
+
+		Else
+			AdmMsgBox("You're not allowed to this Module")
+			Response.Redirect("FinancialAccounting.aspx")
+
+		End If
+
+	End Sub
 End Class
