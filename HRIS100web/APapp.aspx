@@ -82,14 +82,14 @@
 		<tr style="height: 26px; background-color: lightgray">
 			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: right; font-family: 'Segoe UI'; font-size: small;">Document Type:&nbsp;&nbsp; 
 			</td>
-			<td style="border: 1px solid #000000; width: 250px; background-color: lightgray; text-align: left; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 250px; background-color: White; text-align: left; font-family: 'Segoe UI'; font-size: small;">
 
-				<asp:LinkButton ID="lbLoadDocType" runat="server" Style="text-decoration: none; background-color: lightgray; float: right; ">
+				<asp:LinkButton ID="lbLoadDocType" runat="server" Style="text-decoration: none; background-color: white; float: right; ">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/>
 				</asp:LinkButton>
 
 				<asp:DropDownList ID="cboDocType" runat="server" AutoPostBack="true" Width="90%"
-					Font-Names="Segoe UI" Font-Size="small" Height="22px">
+					Font-Names="Segoe UI" Font-Size="small" Height="22px" BorderStyle="None" BackColor="White">
 				</asp:DropDownList>
 
 			</td>
@@ -103,9 +103,9 @@
 			<td style="border: 1px solid #000000; width: 120px; background-color: lightgray; text-align: right; font-family: 'Segoe UI'; font-size: small;">Authorization:&nbsp;&nbsp;
 			</td>
 
-			<td style="border: 1px solid #000000; width: 140px; background-color: lightgray; text-align: left; font-family: 'Segoe UI'; font-size: small;">
+			<td style="border: 1px solid #000000; width: 140px; background-color: White; text-align: left; font-family: 'Segoe UI'; font-size: small;">
 				<asp:DropDownList ID="CboStat" runat="server" AutoPostBack="false" Width="98%"
-					Font-Names="Segoe UI" Font-Size="small" Height="100%">
+					Font-Names="Segoe UI" Font-Size="small" Height="100%" BorderStyle="None" BackColor="White">
 				</asp:DropDownList>
 			</td>
 
@@ -161,9 +161,9 @@
 				
 			</td>
 
-			<td style="border: 1px solid #000000; width: 300px; background-color: lightgray; text-align: left; font-family: 'Segoe UI'; font-size: small;" colspan="2">
+			<td style="border: 1px solid #000000; width: 300px; background-color: White; text-align: left; font-family: 'Segoe UI'; font-size: small;" colspan="2">
 				<asp:TextBox ID="dpTransDate" runat="server" TextMode="Date" Width="120px" Height="20px" Font-Names="Segoe UI"
-					Font-Size="small" CssClass="DateBox"></asp:TextBox>
+					Font-Size="small" CssClass="DateBox" BorderStyle="None" BackColor="White"></asp:TextBox>
 			</td>
 
 		</tr>
@@ -190,7 +190,7 @@
 
 			<td style="border: 1px solid #000000; width: 300px; background-color: lightgray; text-align: left; font-family: 'Segoe UI'; font-size: small;" colspan="2">
 				<asp:TextBox ID="dpTransDate2" runat="server" TextMode="Date" Width="120px" Height="20px" Font-Names="Segoe UI"
-					Font-Size="small" CssClass="DateBox"></asp:TextBox>
+					Font-Size="small" CssClass="DateBox" BorderStyle="None" BackColor="White"></asp:TextBox>
 				&nbsp;
 				<asp:LinkButton ID="lbGetStat" runat="server" Style="text-decoration: none; background-color: lightgray; float: inherit; padding-right: 2px;">
 					<asp:Image runat="server" imageurl="~/images/check_16.png" style="vertical-align: middle"/></asp:LinkButton>
@@ -214,7 +214,7 @@
 
 			<td style="border: 1px solid #000000; width: 300px; background-color: lightgray; text-align: left; font-family: 'Segoe UI'; font-size: small; padding-bottom: 2px;" colspan="2">
 				<asp:DropDownList ID="cboStatList" runat="server" AutoPostBack="true" Width="124px"
-					Font-Names="Segoe UI" Font-Size="small" Height="22px">
+					Font-Names="Segoe UI" Font-Size="small" Height="22px" BorderStyle="None" BackColor="White">
 					<asp:ListItem>PARKED</asp:ListItem>
 					<asp:ListItem>NOTED</asp:ListItem>
 					<asp:ListItem>POSTED</asp:ListItem>

@@ -47,12 +47,14 @@ Public Class APapp
 		cboDocType.Items.Clear()
 
 		If IsAllowed(lblGrpUser.Text, vThisFormCode, 2) = True Then 'edit all
+			cboDocType.Items.Add("")
 			cboDocType.Items.Add("Voucher Payables")
-			'cboDocType.Items.Add("Weekly Expense")
+			cboDocType.Items.Add("Weekly Expense")
 			cboDocType.Items.Add("Customer Credit Memo")
 			cboDocType.Items.Add("Fund Replenishment")
 			cboDocType.Items.Add("Vendor Debit Memo")
-			If cboDocType.Items.Count > 0 Then
+
+			If cboDocType.Items.Count > 1 Then
 				cboDocType.SelectedIndex = 0
 			End If
 
@@ -98,6 +100,10 @@ Public Class APapp
 	End Sub
 
 	Protected Sub GetLimit()
+
+		If cboDocType.Text = "" Or cboDocType.Text = Nothing Then
+			Exit Sub
+		End If
 
 		Select Case cboDocType.Text
 			Case "Voucher Payables"
